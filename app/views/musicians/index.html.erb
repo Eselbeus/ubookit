@@ -1,0 +1,8 @@
+<h1>All Musicians</h1>
+<ul>
+<% @musicians.each do |musician| %>
+<li>
+  <%= musician.name %> <%= link_to musician.band_name, musician %>
+</li>
+<% end %>
+</ul>

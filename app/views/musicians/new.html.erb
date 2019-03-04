@@ -1,0 +1,27 @@
+<ul>
+<%= form_for @musician, controller: 'musicians', action: 'create' do |f| %>
+<li>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</li>
+<li>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+</li>
+<li>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+</li>
+<li>
+  <%= f.label :confirm_password %>
+  <%= f.password_field :password_confirmation %>
+</li>
+<li>
+  <%= f.label :band_name %>
+  <%= f.text_field :band_name %>
+</li>
+<li>
+  <%= f.submit "Create Account" %>
+</li>
+<% end %>
+</ul>

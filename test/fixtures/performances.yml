@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  musician: one
+  venue: one
+  booked: false
+  time: 2019-03-04 13:52:37
+  feedback: 1
+
+two:
+  musician: two
+  venue: two
+  booked: false
+  time: 2019-03-04 13:52:37
+  feedback: 1
