@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     musician = Musician.find_by_email(params[:email])
-    venue - Venue.find_by_email(params[:email])
+    venue = Venue.find_by_email(params[:email])
     if musician && musician.authenticate(params[:password])
       session[:musician_id] = musician.id
       redirect_to '/musicians', notice: 'Logged in!'
@@ -15,23 +15,24 @@ class SessionsController < ApplicationController
       redirect_to '/login'
     end
 
-    if venue && venue.authenticate(params[:password])
-      session[:venue_id] = venue.id
-      redirect_to '/venues', notice: "Logged In!"
-    else
-      flash.now.alert = "Incorrect email or password"
-      redirect_to '/login'
-    end
+    # if venue && venue.authenticate(params[:password])
+    #   session[:venue_id] = venue.id
+    #   redirect_to '/venues', notice: "Logged In!"
+    # else
+    #   flash.now.alert = "Incorrect email or password"
+    #   redirect_to '/login'
+    # end
   end
 
   def destroy
-    if session[:musician_id] = nil
-      flash[:success] = "Logged Out!"
+    if current_user
+      session[:musician_id] = nil
+      redirect_to "/login", notice: "Logged Out!"
+    elsif current_venue
+      session[:venue_id] = nil
       redirect_to "/login", notice: "Logged Out!"
     else
-      session[:venue_id] = nil
-      flash[:success] = "Logged Out!"
-      redirect_to "/login"
+      "haha"
     end
   end
 end

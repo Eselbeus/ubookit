@@ -33,7 +33,8 @@ gem 'therubyracer', :platforms => :ruby
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+# Google Calender
+gem "simple_calendar", "~> 2.0"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

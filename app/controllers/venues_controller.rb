@@ -13,7 +13,7 @@ class VenuesController < ApplicationController
     @venue = Venue.new(venue_params)
     @venue.email.downcase!
     if @venue.save
-      session[:venue_id] = venue.id
+      session[:venue_id] = @venue.id
       flash[:notice] = "Successfully Created User!"
       redirect_to '/venues'
     else

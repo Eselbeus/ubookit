@@ -1,7 +1,5 @@
-
+<!-- 
   <h1>Sign Up</h1>
-  <a href= "/signup/venues" class="btn btn-default">Sign in as a Venue</a>
-  <a href= "/signup/musicians" class="btn btn-default">Sign in as a Musician</a>
   <%= form_tag "/venues", method: :post do %>
   <div>
     <%= label_tag :name %>
@@ -20,10 +18,27 @@
     <%= password_field_tag "venue[password_confirmation]" %>
   </div>
   <div>
-    <%= label_tag :name %>
-    <%= text_field_tag "venue[name]" %>
+     <%= label_tag :city %>
+     <!-- <%= collection_select "venue[location_id]", :id, Location.all, :id, :city %> -->
+     <!-- <%= text_field_tag "venue[location_id]" %>
   </div>
   <div>
     <%= submit_tag "Create Account" %>
   </div>
-  <% end %>
+  <% end %> --> 
+
+  <%= form_for @venue do |f|%>
+    <%= f.label :name %>
+    <%= f.text_field :name %> <br>
+    <%= f.label :username %>
+    <%= f.text_field :username %> <br>
+    <%= f.label :email %>
+    <%= f.text_field :email %> <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %> <br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %> <br>
+    <%= f.label :location_id %>
+    <%= f.collection_select :location_id, Location.all, :id, :city %> <br>
+    <%= f.submit %>
+  <%end %>
