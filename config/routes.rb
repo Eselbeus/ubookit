@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   resources :musicians, only: [:index, :show, :edit, :update]
-
-  get '/signup' => 'musicians#new'
-  post '/musicians' => 'musicians#create'
+  resources :venues, only: [:index, :show]
   
+  root 'static_pages#home'
+
+  get '/signup/musicians' => 'musicians#new'
+  post '/musicians' => 'musicians#create'
+
+  get '/signup/venues' => 'venues#new'
+  post '/venues' => 'venues#new'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'

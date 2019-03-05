@@ -20,7 +20,7 @@ class MusiciansController < ApplicationController
       redirect_to '/musicians'
     else
       flash.now.alert = "Invalid Email or Password"
-      redirect_to '/signup'
+      redirect_to '/signup/musicians'
     end
   end
 
