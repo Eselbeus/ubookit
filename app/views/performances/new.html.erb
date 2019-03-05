@@ -1,10 +1,8 @@
-<%= month_calendar cars: @bookings do |date, bookings| %>  
-  <%= date %>  
-
-  <% bookings.each do |booking| %>  
-    <div>  
-      <%= booking.start_time %>  
-    </div>  
-  <% end %>  
-
-<% end %>
+<!-- <% user = current_user%> -->
+<%= form_for Performance.new do |f|%>
+  <%= f.hidden_field :musician_id,:value => current_user.id%> <br>
+  <%= f.collection_select :venue_id, Venue.all, :id, :name%> <br>
+  <%= f.datetime_field :time %> <br>
+  <%= f.submit %>
+  <%end %>
+  

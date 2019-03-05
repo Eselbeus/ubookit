@@ -14,6 +14,7 @@ class PerformancesController < ApplicationController
 
   def create
     @performance = Performance.create(perfom_params)
+    redirect_to @performance
   end
 
   private
