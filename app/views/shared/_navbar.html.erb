@@ -1,0 +1,23 @@
+<div class="navbar-default" role="navigation">
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">links toggle button</span>
+        <span class="mdl-color--white white icon-bar"></span>
+        <span class="mdl-color--white white icon-bar"></span>
+        <span class="mdl-color--white icon-bar"></span>
+    </button>
+    <a href="/login"><span class="navbar-brand">UBookIt</span></a>
+</div>
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav" style="float: right;">
+        <li><a href="#">About</a></li>
+        <li><a href="/musicians">Musicians</a></li>
+        <li><a href="/venues">Venues</a></li>
+        <% if !logged? %>
+          <li><a href= "/signup">Sign Up!</a></li>
+          <li><a href= "/login">Login</a></li>
+        <% else %>
+          <li><a href="/logout">LogOut</a></li>
+        <%end %>
+    </ul>
+</div>

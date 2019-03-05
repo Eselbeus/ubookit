@@ -1,19 +1,27 @@
 class MusiciansController < ApplicationController
-  before_action :find_by_id, only: [:show, :edit, :update]
+  before_action :get_musician, only: [:show, :edit, :update]
 
   def index
     @musicians = Musician.all
   end
   def show
+    
   end
   def new
     @musician = Musician.new
   end
 
   def create
-    @musician = Musician.create(musician_params)
-    # raise params.inspect
-    redirect_to @musician
+    @musician = Musician.new(musician_params)
+    @musician.email.downcase!
+    if @musician.save
+      session[:musician_id] = @musician.id
+      flash[:notice] = "Successfully Created User!"
+      redirect_to '/musicians'
+    else
+      flash.now.alert = "Invalid Email or Password"
+      redirect_to '/signup'
+    end
   end
 
   def edit
@@ -26,7 +34,7 @@ class MusiciansController < ApplicationController
 
   private
 
-  def find_by_id
+  def get_musician
     @musician = Musician.find(params[:id])
   end
 
