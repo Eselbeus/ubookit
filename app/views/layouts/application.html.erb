@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <%= render partial: "shared/navbar" %>
+    <% if logged_user? %>
+      <h1>Welcome Back! <%= current_user.name%></h1>
+    <% end %>
     <%= yield %>
   </body>
 </html>

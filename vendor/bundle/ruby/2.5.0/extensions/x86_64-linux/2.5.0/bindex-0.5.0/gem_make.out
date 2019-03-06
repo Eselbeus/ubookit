@@ -1,0 +1,15 @@
+current directory: /home/cristian/Documents/Development/ubookit/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+/usr/bin/ruby2.5 -I /usr/local/lib/site_ruby/2.5.0 -r ./siteconf20190304-21259-smazsc.rb extconf.rb
+creating Makefile
+
+current directory: /home/cristian/Documents/Development/ubookit/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /home/cristian/Documents/Development/ubookit/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.so
+
+current directory: /home/cristian/Documents/Development/ubookit/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20190304-21259-ffktdm/bindex

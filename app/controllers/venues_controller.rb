@@ -10,8 +10,16 @@ class VenuesController < ApplicationController
     @venue = Venue.new
   end
   def create
-    @venue = Venue.create(venue_params)
-    redirect_to @venue
+    @venue = Venue.new(venue_params)
+    @venue.email.downcase!
+    if @venue.save
+      session[:venue_id] = @venue.id
+      flash[:notice] = "Successfully Created User!"
+      redirect_to '/venues'
+    else
+      flash.now.alert = "Invalid email or password"
+      redirect_to '/signup/venues'
+    end  
   end
 
 

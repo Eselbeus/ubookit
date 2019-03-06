@@ -1,27 +1,28 @@
-<ul>
-<%= form_for @musician, controller: 'musicians', action: 'create' do |f| %>
-<li>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</li>
-<li>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-</li>
-<li>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-</li>
-<li>
-  <%= f.label :confirm_password %>
-  <%= f.password_field :password_confirmation %>
-</li>
-<li>
-  <%= f.label :band_name %>
-  <%= f.text_field :band_name %>
-</li>
-<li>
-  <%= f.submit "Create Account" %>
-</li>
+
+<h1>Sign Up</h1>
+
+<%= form_tag "/musicians", method: :post do %>
+<div>
+  <%= label_tag :name %>
+  <%= text_field_tag "musician[name]" %>
+</div>
+<div>
+  <%= label_tag :email %>
+  <%= text_field_tag "musician[email]" %>
+</div>
+<div>
+  <%= label_tag :password %>
+  <%= password_field_tag "musician[password]" %>
+</div>
+<div>
+  <%= label_tag :password_confirmation %>
+  <%= password_field_tag "musician[password_confirmation]" %>
+</div>
+<div>
+  <%= label_tag :band_name %>
+  <%= text_field_tag "musician[band_name]" %>
+</div>
+<div>
+  <%= submit_tag "Create Account" %>
+</div>
 <% end %>
-</ul>

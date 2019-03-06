@@ -2,7 +2,7 @@
 <ul>
 <% @musicians.each do |musician| %>
 <li>
-  <%= musician.name %> <%= link_to musician.band_name, musician %>
+   <%= link_to musician.band_name, musician %>
 </li>
 <% end %>
 </ul>
