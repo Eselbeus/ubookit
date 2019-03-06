@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :performances
   resources :locations, only: [:show]
   root 'static_pages#home'
+  get '/about' => 'static_pages#about'
 
   get '/signup/musicians' => 'musicians#new'
   post '/musicians' => 'musicians#create'
