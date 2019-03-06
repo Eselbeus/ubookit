@@ -1,3 +1,4 @@
 <% @location.venues.each do |venue| %>
 <%= link_to venue.name, venue_path %>
+ <p><%= venue.description %></p>
 <% end %>

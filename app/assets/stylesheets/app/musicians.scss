@@ -1,0 +1,22 @@
+.musician-form {
+  @include form;
+  margin-top: 50px;
+}
+input#musician_name {
+  @include text_field
+}
+input#musician_email {
+  @include text_field
+}
+input#musician_password {
+  @include text_field
+}
+input#musician_password_confirmation {
+  @include text_field
+}
+input#musician_band_name {
+  @include text_field
+}
+input[type=submit] {
+  @include text_field
+}

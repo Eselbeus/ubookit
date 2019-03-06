@@ -1,10 +1,5 @@
-<div class = "container">
-  <div class ="row imagetiles">
-    <div class = 'col-sm-3'>
+<div class = "grid-container">
       <% @locations.each do |location| %>
-        <img src="<%= location.image_url%>" alt="city" style= "width:50%">
-        <%= link_to location.city, location%>
+        <div class = "grid-item"> <img src="<%= location.image_url%>" style="width:100px; height: 100px;"> <label><%= link_to location.city, location%></label></div>  
       <% end %>
-    </div>
-  </div>
 </div>

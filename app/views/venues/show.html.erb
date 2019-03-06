@@ -1,6 +1,8 @@
 <h1>hello</h1>
-
-<a href= "/performances/new" class="btn btn-default">Book Me!</a>
-<%= month_calendar do |date| %>
-  <%= date %>
+<%= @venue.description %>
+<% @venue.bookings.each do |x| %>
+<%= x.name %> <br>
+<%= x.start_time %> <br>
 <% end %>
+<a href= "/performances/new" class="btn btn-default">Book Me!</a>
+<a href= "/performances/show" class="btn btn-default">List of Performances</a>

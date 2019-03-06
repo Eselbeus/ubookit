@@ -11,16 +11,16 @@
 <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav" style="float: right;">
         <li><a href="/about">About</a></li>
-        <li><a href="/musicians">Musicians</a></li>
-        <li><a href="/venues">Venues</a></li>
         <% if !logged_user? %>
-        <li><a href="/locations">Locations</a></li>
-        <li><a href= "/">Sign Up!</a></li>
-        <li><a href= "/login">Login</a></li>
+          <li><a href="/locations">Locations</a></li>
+          <li><a href= "/">Sign Up!</a></li>
+          <li><a href= "/login">Login</a></li>
         <% else %>
           <li><a href="/venues">Venues</a></li>
           <li><a href="/musicians">Musicians</a></li>
           <li><a href="/logout">LogOut</a></li>
+          <li><%= current_user.name %></li>
         <%end %>
     </ul>
+</div>
 </div>

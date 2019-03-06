@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-<<<<<<< HEAD
     protect_from_forgery with: :exception
 
     def current_user
@@ -21,7 +20,4 @@ class ApplicationController < ActionController::Base
     def logged_venue?
       !current_venue.nil?
     end
-=======
-  
->>>>>>> seann
 end

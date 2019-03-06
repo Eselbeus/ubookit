@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bookings
   resources :musicians, only: [:index, :show, :edit, :update]
   resources :venues, only: [:index, :show]
   resources :performances

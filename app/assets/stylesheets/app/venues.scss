@@ -1,0 +1,58 @@
+@mixin text_field {
+  color: #eeeeee;
+  text-shadow: 0 1pt 0 #3d52d5;
+  padding: 2px;
+  border-radius: 5px;
+  background-color: #73937e;
+}
+@mixin form {
+  background-color: #508991;
+  color: #3d52d5;
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 30px;
+  padding: 10px;
+}
+.venue_form {
+  @include form;
+  label {
+    color: red;
+  }
+  .submit input{
+    @include text_field
+  }
+}
+
+input#venue_name {
+  @include text_field
+}
+
+input#venue_username {
+  @include text_field
+}
+
+input#venue_email {
+  @include text_field
+}
+
+input#venue_password {
+  @include text_field
+}
+
+input#venue_password_confirmation {
+  @include text_field
+}
+
+textarea#venue_description{
+  @include text_field
+}
+
+select#venue_location_id {
+  @include text_field()
+}
+p {
+  font-size: 20px;
+  font-family: 'dosis';
+  padding: 2px;
+}

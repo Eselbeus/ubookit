@@ -26,19 +26,27 @@
     <%= submit_tag "Create Account" %>
   </div>
   <% end %> --> 
-
-  <%= form_for @venue do |f|%>
-    <%= f.label :name %>
-    <%= f.text_field :name %> <br>
-    <%= f.label :username %>
-    <%= f.text_field :username %> <br>
-    <%= f.label :email %>
-    <%= f.text_field :email %> <br>
-    <%= f.label :password %>
-    <%= f.password_field :password %> <br>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %> <br>
-    <%= f.label :location_id %>
-    <%= f.collection_select :location_id, Location.all, :id, :city %> <br>
-    <%= f.submit %>
+<p>Welcome venue owners and bookers! Please fill out all the information as completely as possible. Select your closest major city.
+  Please fill out the description field and include 1. Your backline, 2. Your door deal for artists. Keep in mind you may set a rental cost.
+  If you set a rental cost, you really should give your artists a big cut of the door. Thank you!
+</p>
+<div class = "venue_form">
+    <%= form_for @venue do |f|%>
+      <%= f.label :venue_name %>
+      <%= f.text_field :name %> <br>
+      <%= f.label :username %>
+      <%= f.text_field :username %> <br>
+      <%= f.label :email %>
+      <%= f.text_field :email %> <br>
+      <%= f.label :password %>
+      <%= f.password_field :password %> <br>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %> <br>
+      <%= f.label :description %>
+      <%= f.text_area :description %><br>
+      <%= f.label :location_id %>
+      <%= f.collection_select :location_id, Location.all, :id, :city %> <br>
+    <div class="submit"><%= f.submit %></div>
   <%end %>
+</div>
+  
