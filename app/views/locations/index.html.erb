@@ -1,10 +1,10 @@
 <div class = "container">
   <div class ="row imagetiles">
-    <% @locations.each do |location| %>
     <div class = 'col-sm-3'>
-      <img src="<%= location.image_url%>" alt="city" style= "width:50%">
-      <%= link_to location.city, location%>
+      <% @locations.each do |location| %>
+        <img src="<%= location.image_url%>" alt="city" style= "width:50%">
+        <%= link_to location.city, location%>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>

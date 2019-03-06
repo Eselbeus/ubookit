@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Location.destroy_all
+
 puts "Destroyed"
 
 Location.create(city: "New York City", image_url: "https://media.cntraveler.com/photos/5a8f3b070e2cf839e9dbfa1d/master/w_1200,c_limit/NYC_GettyImages-640006562.jpg")
