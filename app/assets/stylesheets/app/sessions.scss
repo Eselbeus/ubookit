@@ -43,7 +43,7 @@
 }
 .login {
   .inputbox {
-    input:focus ~ label, 
+    input:focus ~ label,
     input:valid ~ label {
       top: -18px;
       left: 0;
