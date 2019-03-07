@@ -1,4 +1,17 @@
-<h1>Welcome Back <%= @musician.name %></h1>
-<h2>Book <%= @musician.band_name %> now!</h2>
 <a href= "/locations" class="btn btn-default">Book A Venue</a>
+<h1>Welcome <%= @musician.name %></h1>
+<h2>Book <%= @musician.band_name %> now!</h2>
+
+<% @musician.performances.each do |per| %>
+<table>
+  <tr>
+   <th>Name</th>
+   <th>Time of Performance</th>
+  </tr>
+  <tr>
+   <td><%= per.venue.name %></td>
+   <td><%= per.time%></td>
+  </tr>
+ </table>
+<% end %>
 <!-- link back to his performance -->
