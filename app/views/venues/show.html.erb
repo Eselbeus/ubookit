@@ -1,12 +1,3 @@
-<h1>hello</h1>
-<%= @venue.name %>
-  <div id = 'bookings'>
-    <%= calendar do |date| %>
-      <%= date.day %>
-      <ul>
-        <% if @performances_by_date
-      </ul>
-    <% end %>
-  </div>
+<h1><%= @venue.name %></h1>
 <a href= "/performances/new" class="btn btn-default">Book Me!</a>
 
