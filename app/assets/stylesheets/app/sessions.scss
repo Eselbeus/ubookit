@@ -1,6 +1,54 @@
-// .login {
-//   display: flex;
-// 	flex-direction: column;
-// 	justify-content: center;
-// 	align-items: center;
-// }
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 1);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+  border-radius: 10px;
+  color: white;
+  .inputbox {
+    position: relative;
+    input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+    }
+    input[type= submit] {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      background: #03a9f4;
+      padding: 10px 20px;
+    }
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: white;
+
+    }
+  }
+}
+.login {
+  .inputbox {
+    input:focus ~ label, 
+    input:valid ~ label {
+      top: -18px;
+      left: 0;
+      color: #03a9f4;
+      font-size: 10px;
+    }
+  }
+}
