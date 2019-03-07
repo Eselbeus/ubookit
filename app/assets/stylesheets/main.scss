@@ -7,4 +7,15 @@
 @import 'navbar';
 @import 'app/venues';
 @import 'app/musicians';
-@import 'simple_calendar';
+@import 'app/calendar';
+
+.banner {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+
+}
