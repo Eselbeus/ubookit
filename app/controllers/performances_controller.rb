@@ -13,6 +13,7 @@ class PerformancesController < ApplicationController
   end
 
   def create
+    byebug
     @performance = Performance.create(perfom_params)
     redirect_to @performance
   end
@@ -25,6 +26,12 @@ class PerformancesController < ApplicationController
     @performance = Performance.find(params[:id])
     @performance.update(perfom_params)
     redirect_to @performance
+  end
+  def destroy
+    @musician = Musician.find_by(id: current_user.id)
+    @performance = Performance.find(musician_id: @musician.id)
+    @performance.destroy
+    redirect_to @musician
   end
   
   private

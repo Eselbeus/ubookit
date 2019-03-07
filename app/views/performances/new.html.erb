@@ -2,7 +2,7 @@
 <%= form_for Performance.new do |f|%>
   <%= f.hidden_field :musician_id,:value => current_user.id%> <br>
   <%= f.collection_select :venue_id, Venue.all, :id, :name%> <br>
-  <%= f.collection_select :time, Booking.all   %> <br>
+  <%= f.collection_select :time, Booking.all, :start_time, :time   %> <br>
   <%= f.submit %>
   <%end %>
   

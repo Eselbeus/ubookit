@@ -1,28 +1,35 @@
 <% if current_user.id != session[:venue_id] %>
-<%if @musician.rating_eligible? %>
-<a href= "/locations" class="btn btn-default">Book A Venue</a>
-<%end %>
-<h1>Welcome Back <%= @musician.name %></h1>
-<h2><%= @musician.band_name %></h2>
-<p><%= @musician.musician_rating %></p>
-<% else %>
-<h2>Book <%= @musician.band_name %> now!</h2>
-<%end %>
-<% @musician.performances.each do |per| %>
-<table>
-  <tr>
-   <th>Name</th>
-   <th>Time of Performance</th>
-  </tr>
-  <tr>
-   <td><%= per.venue.name %></td>
-   <td><%= per.time%></td>
-  </tr>
- </table>
- <% if !per.booked? %>
-  <label>You have not been booked yet!</label>
-  <% else %>
-  <label>You're all good to go!</label>
+  <%if @musician.rating_eligible? %>
+    <a href= "/locations" class="btn btn-default">Book A Venue</a>
   <%end %>
+  <h1>Welcome Back <%= @musician.name %></h1>
+  <h2><%= @musician.band_name %></h2>
+  <p><%= @musician.musician_rating %></p>
+<% else %>
+  <h2>Book <%= @musician.band_name %> now!</h2>
+  <button id="like" type="button" onclick="IncreaseRating()">Like</button>
+  <button id="dislike" type="button" onclick="DecreaseRating()">Dislike</button>
+  <div id="rating">
+  0
+  </div>
+
+<%end %>
+  <% @musician.performances.each do |per| %>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Time of Performance</th>
+      </tr>
+      <tr>
+        <p><%= button_to "delete", {:controller => :performances,
+          :action => 'destroy', :id => @musician.id }, :method => :delete %></p>
+        <td><%= per.venue.name %> </td>
+        <td><%= per.time  %></td>
+      </tr>
+    </table>
+    <% if !per.booked? %>
+      <label>You have not been booked yet!</label>
+    <% else %>
+      <label>You're all good to go!</label>
+    <%end %>
 <% end %>
-<!-- link back to his performance -->
