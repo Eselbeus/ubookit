@@ -1,7 +1,10 @@
-<div class = "grid-container">
-  <% Location.all.each do |location| %>
-    <div class = "grid-item"> <img src="<%= location.image_url%>" style="width:100px; height: 100px;"> <label><%= link_to location.city, location%></label></div>  
-  <% end %>
+<div>
+  <ul>
+    <% @venues.all.each do |venue| %>
+      <li> <%= link_to venue.name, venue%> </li>
+    <% end %>
+  </ul>
+    
 </div>
 
 <div id="calendar"></div>

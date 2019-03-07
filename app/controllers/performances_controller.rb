@@ -17,8 +17,19 @@ class PerformancesController < ApplicationController
     redirect_to @performance
   end
 
+  def edit
+    @performance = Performance.find(params[:id])
+  end
+
+  def update
+    @performance = Performance.find(params[:id])
+    @performance.update(perfom_params)
+    redirect_to @performance
+  end
+  
   private
     def perfom_params
-      params.require(:performance).permit(:musician_id, :venue_id, :time)
+      params.require(:performance).permit(:musician_id, :venue_id, :time, :booked)
     end
 end
+

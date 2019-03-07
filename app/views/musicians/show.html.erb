@@ -1,7 +1,13 @@
+<% if current_user.id != session[:venue_id] %>
+<%if @musician.rating_eligible? %>
 <a href= "/locations" class="btn btn-default">Book A Venue</a>
-<h1>Welcome <%= @musician.name %></h1>
+<%end %>
+<h1>Welcome Back <%= @musician.name %></h1>
+<h2><%= @musician.band_name %></h2>
+<p><%= @musician.musician_rating %></p>
+<% else %>
 <h2>Book <%= @musician.band_name %> now!</h2>
-
+<%end %>
 <% @musician.performances.each do |per| %>
 <table>
   <tr>
@@ -13,5 +19,10 @@
    <td><%= per.time%></td>
   </tr>
  </table>
+ <% if !per.booked? %>
+  <label>You have not been booked yet!</label>
+  <% else %>
+  <label>You're all good to go!</label>
+  <%end %>
 <% end %>
 <!-- link back to his performance -->

@@ -1,3 +1,47 @@
 <h1><%= @venue.name %></h1>
-<a href= "/performances/new" class="btn btn-default">Book Me!</a>
+<!-- <a href= "/performances/new" class="btn btn-default">Book Me!</a> -->
 
+<h1>Available Shows!</h1>
+<ul>
+  <% @venue.bookings.each do |book|%>
+  <li>
+    <%= book.name %>---<%= book.start_time %>
+  </li>
+  <%end %>
+</ul>
+<div>
+  <ul>
+    <% if current_user.id != session[:musician_id]  %>
+    <% @venue.performances.each do |per| %>
+    <li>
+      <%= per.musician.name %> <br>
+      <%= per.time %> <br>
+      <% if !per.booked %> 
+        <label>Not Approved!</label>
+          <%=form_for per do |f|%>
+          <%= f.hidden_field :venue_id, :value => @venue.id %>
+            <%= f.label :booked, "Approve?" %>
+            <%= f.check_box :booked %>
+            <%= f.submit %>
+          <% end %>
+      <% else %>
+        <label>Approved!</label>
+      <%end%>
+    </li>
+    <%end %>
+  </ul>
+</div>
+
+
+<%= link_to "Create a new Show time!", new_booking_path%>
+
+<%end %>
+
+<div>
+    <%= form_for Performance.new do |f| %>
+    <%= f.hidden_field :musician_id, :value => current_user.id%>
+    <%= f.hidden_field :venue_id, :value => @venue.id %>
+    <%= f.collection_select :start_time, @venue.bookings, :id, :name %>
+    <%= f.submit %>
+  <% end %>
+</div>

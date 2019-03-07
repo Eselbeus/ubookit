@@ -2,12 +2,14 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
 
     def current_user
-      @current_musician ||= Musician.find(session[:musician_id]) if session[:musician_id]
+      if session[:musician_id]
+        @current_musician ||= Musician.find(session[:musician_id])
+      elsif session[:venue_id]
+        @current_venue ||= Venue.find(session[:venue_id])
+      end
     end
-    def current_venue
-      @current_venue ||= Venue.find(session[:venue_id]) if session[:venue_id]
-    end
-    helper_method :current_user, :logged_user?, :current_venue, :logged_venue?
+  
+    helper_method :current_user, :logged_user?
 
     def authorize
       redirect_to '/login' unless current_user
@@ -17,7 +19,4 @@ class ApplicationController < ActionController::Base
       !current_user.nil?
     end
 
-    def logged_venue?
-      !current_venue.nil?
-    end
 end

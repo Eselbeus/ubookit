@@ -19,8 +19,12 @@
           <li><a href="/venues">Venues</a></li>
           <li><a href="/musicians">Musicians</a></li>
           <li><a href="/logout">LogOut</a></li>
-          <li><%= current_user.name %></li>
-        <%end %>
+          <% if current_user.id == session[:musician_id]%>
+            <li><a href=<%="/musicians/#{current_user.id}" %>><%= current_user.name %></a></li>
+          <% else%>
+            <li><a href=<%="/venues/#{current_user.id}" %>><%= current_user.name %></a></li>
+          <%end %>
+          <% end %>
     </ul>
 </div>
 </div>
