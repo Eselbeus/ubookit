@@ -9,7 +9,10 @@ class SessionsController < ApplicationController
     venue = Venue.find_by_email(params[:email])
     if musician && musician.authenticate(params[:password])
       session[:musician_id] = musician.id
-      redirect_to '/musicians', notice: 'Logged in!'
+      redirect_to "/musicians/#{current_user.id}", notice: 'Logged in!'
+    elsif venue && venue.authenticate(params[:password])
+      session[:venue_id] = venue.id
+      redirect_to "/venues/#{current_user.id}", notice: "Logged In!"
     else
       flash.now.alert = "Incorrect email or password, Please try again."
       redirect_to '/login'
@@ -27,8 +30,6 @@ class SessionsController < ApplicationController
   def destroy
     if current_user
       session[:musician_id] = nil
-      redirect_to "/login", notice: "Logged Out!"
-    elsif current_venue
       session[:venue_id] = nil
       redirect_to "/login", notice: "Logged Out!"
     else

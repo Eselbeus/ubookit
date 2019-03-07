@@ -31,6 +31,15 @@ class MusiciansController < ApplicationController
     redirect_to @musician
   end
 
+  def destroy
+    @performance = Performace.find_by(musician_id: current_user.id)
+    @performance.destroy
+  end
+  # def decrease_rating
+  #   @musician = Musician.find(params[:id])
+  #   @musician.rating -= 0.1
+  # end
+
 
   private
 

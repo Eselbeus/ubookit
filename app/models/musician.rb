@@ -5,7 +5,6 @@ class Musician < ApplicationRecord
   validates :name, :email, :band_name, :password, presence: true
   validates :email, :band_name, uniqueness: true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
-end
 
 def performances_number
   self.performances.length
@@ -41,4 +40,14 @@ def recover_rating
     self.rating += 0.1
     @time = DateTime.now.advance(:weeks => +4)
   end
+end
+
+def musician_rating
+  if self.rating <= 2.5
+    return "Your rating is #{self.rating}. Your rating needs to be higher to book shows."
+  else
+    return "Your rating is #{self.rating}."
+  end
+ end
+
 end

@@ -1,5 +1,5 @@
 @mixin text_field {
-  color: #eeeeee;
+  color: black;
   text-shadow: 0 1pt 0 #3d52d5;
   padding: 2px;
   border-radius: 5px;
@@ -44,19 +44,19 @@ input#venue_username {
 }
 
 input#venue_email {
-  @include text_field
+  @include text_field;
 }
 
 input#venue_password {
-  @include text_field
+  @include text_field;
 }
 
 input#venue_password_confirmation {
-  @include text_field
+  @include text_field;
 }
 
 textarea#venue_description{
-  @include text_field
+  @include text_field;
 }
 
 select#venue_location_id {

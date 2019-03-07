@@ -1,5 +1,3 @@
-<%= Musician.find(@performance.musician_id).band_name%> <br>
-<%= Musician.find(@performance.venue_id).name %> <br>
 <%= @performance.time %> <br>
 <%if !@performance.booked %>
   <h3>Hey you currently haven't been accepted!</h3>
