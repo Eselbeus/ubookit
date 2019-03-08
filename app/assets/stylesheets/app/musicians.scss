@@ -1,6 +1,7 @@
 .musician-form {
   @include form;
   margin-top: 50px;
+  background-color: #508991;
 }
 input#musician_name {
   @include text_field

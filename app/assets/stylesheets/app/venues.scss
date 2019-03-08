@@ -26,8 +26,10 @@
 }
 .venue_form {
   @include form;
+  background-color: #508991;
   label {
     color: white;
+
   }
   .submit input{
     @include text_field;
@@ -68,5 +70,3 @@ p {
   font-family: 'dosis';
   padding: 2px;
 }
-
-
