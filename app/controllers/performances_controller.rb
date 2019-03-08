@@ -33,7 +33,7 @@ class PerformancesController < ApplicationController
     @performance.destroy
     redirect_to @musician
   end
-  
+  ß
   private
     def perfom_params
       params.require(:performance).permit(:musician_id, :venue_id, :time, :booked)
