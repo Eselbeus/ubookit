@@ -6,7 +6,11 @@
         <span class="mdl-color--white white icon-bar"></span>
         <span class="mdl-color--white icon-bar"></span>
     </button>
-    <a href="/"><span class="navbar-brand">UBookIt</span></a>
+    <% if !logged_user?%>
+      <a href="/"><span class="navbar-brand">UBookIt</span></a>
+    <% else %>
+      <a href=""><span class="navbar-brand">UBookIt</span></a>
+    <%end %>
 </div>
 <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav" style="float: right;">
@@ -17,14 +21,14 @@
           <li><a href= "/login">Login</a></li>
         <% else %>
           <li><a href="/venues">Venues</a></li>
-          <li><a href="/musicians">Musicians</a></li>
-          <li><a href="/logout">LogOut</a></li>
           <% if current_user.id == session[:musician_id]%>
-            <li><a href=<%="/musicians/#{current_user.id}" %>><%= current_user.name %></a></li>
+          <li><a href=<%="/musicians/#{current_user.id}" %>><%= current_user.name %></a></li>
           <% else%>
-            <li><a href=<%="/venues/#{current_user.id}" %>><%= current_user.name %></a></li>
-          <%end %>
-          <% end %>
+          <li><a href="/musicians">Musicians</a></li>
+          <li><a href=<%="/venues/#{current_user.id}" %>><%= current_user.name %></a></li>
+        <%end %>
+          <li><a href="/logout">Logout</a></li>
+        <% end %>
     </ul>
 </div>
 </div>

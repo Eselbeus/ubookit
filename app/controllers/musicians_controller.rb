@@ -32,8 +32,9 @@ class MusiciansController < ApplicationController
   end
 
   def destroy
-    @performance = Performace.find_by(musician_id: current_user.id)
-    @performance.destroy
+    get_musician
+    @musician.destroy
+    redirect_to '/logout'
   end
   # def decrease_rating
   #   @musician = Musician.find(params[:id])
