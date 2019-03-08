@@ -1,6 +1,10 @@
-<div>
+<div class = "show-index">
   <ul>
     <% @venues.all.each do |venue| %>
+    <h1><%= venue.location.city %></h1>
+    <div>
+      <!-- <img src="<%= venue.location.image_url%>" alt=""> -->
+    </div>
       <li> <%= link_to venue.name, venue%> </li>
     <% end %>
   </ul>

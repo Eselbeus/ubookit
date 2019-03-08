@@ -63,10 +63,18 @@ select#venue_location_id {
   @include text_field;
   color: black;
 }
-p {
-  font-size: 20px;
-  font-family: 'dosis';
-  padding: 2px;
+
+
+.venue {
+  p {
+    font-size: 20px;
+    font-family: 'dosis';
+    padding: 2px;
+  }
 }
 
-
+.show-index {
+  li {
+    font-size: 30px;
+  }
+}

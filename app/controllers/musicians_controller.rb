@@ -31,6 +31,14 @@ class MusiciansController < ApplicationController
     redirect_to @musician
   end
 
+<<<<<<< HEAD
+=======
+  def destroy
+    get_musician
+    @musician.destroy
+    redirect_to '/logout'
+  end
+>>>>>>> 20dffdb8e5eeeaac6e2d3b39b73d85b766d21e6b
   # def decrease_rating
   #   @musician = Musician.find(params[:id])
   #   @musician.rating -= 0.1

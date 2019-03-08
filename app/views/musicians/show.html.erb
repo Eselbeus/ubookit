@@ -1,7 +1,9 @@
-<% if current_user.id != session[:venue_id] %>
+<div class = "show">
+  <% if current_user.id != session[:venue_id] %>
   <%if @musician.rating_eligible? %>
     <a href= "/locations" class="btn btn-default">Book A Venue</a>
   <%end %>
+  <button type= "button" class = "btn btn-default"><%= link_to "Delete this user", @musician, method: :delete, data: { confirm: 'Are you sure?' }%></button>
   <h1>Welcome Back <%= @musician.name %></h1>
   <h2><%= @musician.band_name %></h2>
   <p><%= @musician.musician_rating %></p>
@@ -21,11 +23,10 @@
         <th>Time of Performance</th>
       </tr>
       <tr>
-        <p><%= button_to "delete", {:controller => :performances,
-          :action => 'destroy', :id => @musician.id }, :method => :delete %></p>
         <td><%= per.venue.name %> </td>
         <td><%= per.time  %></td>
       </tr>
+      <button type= "button" class = "button"><label><%= link_to "Delete this show", per, method: :delete, data: { confirm: 'Are you sure?' }%></label></button>
     </table>
     <% if !per.booked? %>
       <label>You have not been booked yet!</label>
@@ -33,3 +34,4 @@
       <label>You're all good to go!</label>
     <%end %>
 <% end %>
+</div>
