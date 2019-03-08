@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :bookings
-  resources :musicians, only: [:index, :show, :edit, :update]
+  resources :musicians, only: [:index, :show, :edit, :update, :destroy]
   resources :venues, only: [:index, :show]
   resources :performances
   resources :locations, only: [:show]
