@@ -29,9 +29,9 @@
       <button type= "button" class = "button"><label><%= link_to "Delete this show", per, method: :delete, data: { confirm: 'Are you sure?' }%></label></button>
     </table>
     <% if !per.booked? %>
-      <label>You have not been booked yet!</label>
+      <label>This show has not been approved yet!</label>
     <% else %>
-      <label>You're all good to go!</label>
+      <label>This show has been approved!</label>
     <%end %>
 <% end %>
 </div>

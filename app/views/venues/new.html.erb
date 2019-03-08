@@ -1,4 +1,4 @@
-<!-- 
+<!--
   <h1>Sign Up</h1>
   <%= form_tag "/venues", method: :post do %>
   <div>
@@ -25,11 +25,14 @@
   <div>
     <%= submit_tag "Create Account" %>
   </div>
-  <% end %> --> 
+  <% end %> -->
+  
 <p>Welcome venue owners and bookers! Please fill out all the information as completely as possible. Select your closest major city.
   Please fill out the description field and include 1. Your backline, 2. Your door deal for artists. Keep in mind you may set a rental cost.
   If you set a rental cost, you really should give your artists a big cut of the door. Thank you!
 </p>
+
+
 <div class = "venue_form">
     <%= form_for @venue do |f|%>
       <%= f.label :venue_name %>
@@ -49,4 +52,3 @@
     <div class="submit"><%= f.submit %></div>
   <%end %>
 </div>
-  

@@ -4,6 +4,13 @@ $ff: 'Courier New', Courier, monospace;
   @include form;
   margin-top: 50px;
   background-color: #508991;
+  color: #eeeeee;
+  form input {
+  }
+  form .submit input {
+    color: black;
+    text-shadow: 1px .2px #3e4e50;
+  }
 }
 input#musician_name {
   @include text_field
@@ -23,8 +30,6 @@ input#musician_band_name {
 input[type=submit] {
   @include text_field
 }
-<<<<<<< HEAD
-=======
 @mixin curved {
   -webkit-border-radius: 28;
     -moz-border-radius: 28;
@@ -69,4 +74,3 @@ input[type=submit] {
     }
   }
 }
->>>>>>> 20dffdb8e5eeeaac6e2d3b39b73d85b766d21e6b

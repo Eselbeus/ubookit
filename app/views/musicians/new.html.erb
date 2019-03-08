@@ -4,18 +4,18 @@
   <%= form_tag "/musicians", method: :post do %>
     <%= label_tag :name %>
     <%= text_field_tag "musician[name]" %> <br>
-    
+
     <%= label_tag :email %>
     <%= text_field_tag "musician[email]" %> <br>
     <%= label_tag :password %>
     <%= password_field_tag "musician[password]" %> <br>
-    
+
     <%= label_tag :password_confirmation, 'Confirm Password' %>
     <%= password_field_tag "musician[password_confirmation]" %> <br>
-    
+
     <%= label_tag :band_name %>
     <%= text_field_tag "musician[band_name]" %> <br>
-    
-    <%= submit_tag "Create Account" %> <br>
+
+    <div class="submit"><%= submit_tag "Create Account" %></div> <br>
     <% end %>
 </div>

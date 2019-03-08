@@ -23,17 +23,21 @@
   background: rgba(0, 0, 0, .8);
   box-shadow: 0 15px 25px rgba(0,0,0,.5);
   border-radius: 10px;
+  margin-top: 20px;
 }
 .venue_form {
   @include form;
   background-color: #508991;
   label {
-    color: white;
-
+    color: #eeeeee;
   }
   .submit input{
     @include text_field;
     color: black;
+    text-shadow: 1px .2px #3e4e50;
+  }
+  select#venue_location_id{
+    text-shadow: 1px .2px #3e4e50;
   }
 }
 
@@ -65,25 +69,20 @@ select#venue_location_id {
   @include text_field;
   color: black;
 }
-<<<<<<< HEAD
+
+
+
 p {
   font-size: 20px;
   font-family: 'dosis';
   padding: 2px;
-=======
-
-
-.venue {
-  p {
-    font-size: 20px;
-    font-family: 'dosis';
-    padding: 2px;
-  }
+  color: #eeeeee;
+  text-align: center;
 }
+
 
 .show-index {
   li {
     font-size: 30px;
   }
->>>>>>> 20dffdb8e5eeeaac6e2d3b39b73d85b766d21e6b
 }
